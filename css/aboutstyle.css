@@ -1,0 +1,52 @@
+@font-face {
+    font-family: squidgame;
+    src: url(../fonts/squidgame.ttf);
+}
+@font-face {
+    font-family: vogue;
+    src: url(../fonts/Vogue.ttf);
+}
+@font-face {
+    font-family: redhands;
+    src: url(../fonts/redhands.ttf);
+}
+
+:root{
+    --green: #77DD77;
+    --darkg: #165816;
+    --main: #c0f3c0;
+    --headone: squidgame;
+    --headtwo: vogue;
+    --common: redhands;
+}
+body{
+    background-color: var(--main);
+}
+
+div{
+    background: var(--green);
+    border-collapse: collapse;
+    border: 3px solid;
+    border-color: var(--darkg);
+}
+
+h1{
+    color: var(--darkg);
+    text-align: center;
+    font-family: var(--headone);
+    font-size: xx-large;
+}
+
+h2{
+    color: var(--darkg);
+    font-family: var(--headone);
+    font-size: xx-large;
+}
+p{
+    color: var(--darkg);
+    font-family: var(--common);
+}
+footer{
+    background-color:white;
+    text-align: center;
+}
