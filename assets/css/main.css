@@ -1,0 +1,91 @@
+@font-face {
+    font-family: squidgame;
+    src: url(../fonts/squidgame.ttf);
+}
+
+:root {
+    --background-grey: #0c0a14;
+    --modPurple: #bd1492; /* Use lime? */
+    color: white;
+}
+
+body {
+    background-color: var(--background-grey);
+    margin: 0;
+}
+
+button {
+    background-color: inherit;
+    color: inherit;
+    border: none;
+}
+
+h1 {
+    color: greenyellow;
+    font-family: squidgame;
+    text-align: center;
+    margin: 0;
+}
+
+h2, h2 a:visited, h2 a {
+    text-decoration: none;
+    text-align: center;
+    color: inherit;
+    font-size: 4rem;
+    font-family: Impact, sans-serif; /* CHOOSE A BETTER FONT */
+    line-height: 1.75;
+}
+
+h2:nth-of-type(even) {
+    color: var(--modPurple)
+}
+
+h3 {
+    font-family: 'squidgame';
+    color: lime;
+    font-size: 1.75rem;
+}
+
+h4 {
+    color: var(--modPurple);
+    /* Choose font face */
+    font-size: 1.5rem;
+}
+
+/* CLASSES */
+.icons {
+    font-family: 'Material Icons';
+    font-size: 2.125rem;
+    display: block;
+    margin: 0;
+    margin-top: 1vh;
+    float: right;
+}
+
+.header {
+    overflow: hidden; 
+    background: black; 
+    padding: 1vh;
+}
+
+.body {
+    margin-top : 8px;
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+.left {
+    float:left;
+    text-align: right;
+}
+
+.right {
+    float:right;
+    text-align: right;
+
+}
+
+.centre {
+    float:center;
+    text-align: center;
+}
