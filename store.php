@@ -16,6 +16,21 @@
     
     <?php include 'assets/php/header.php'?>
 
-    
+    <form onkeydown="return event.key != 'Enter';">
+    <div class = 'centre'>
+        
+        <div class = 'store-item'>
+            <img src = 'assets/product-images/noImage.png'>
+            <?php include 'assets/php/q-selector.php'?>
+        </div>
+           
+        <div class = 'store-item'>
+            <img src = 'assets/product-images/noImage.png'>
+            <?php include 'assets/php/q-selector.php'?>
+        </div>
+
+    </div>
+    </form>
+
 </body>
 </html>

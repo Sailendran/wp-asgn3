@@ -89,3 +89,45 @@ h4 {
     float:center;
     text-align: center;
 }
+
+/* Store item classes */
+    .store-item {
+        width: 42.5vw;
+        height: 42.5vw;
+        margin: calc(5vw/4);
+        background-color: var(--modPurple); /*  TODO CHANGE THIS */
+        border: 1px solid greenyellow;
+        border-radius: 10px;
+        display: inline-block;
+    }
+
+    .store-item:nth-of-type(odd) {
+        margin-right: calc(5vw/2);
+    }
+
+    .store-item:nth-of-type(even) {
+        margin-left: calc(5vw/2);
+    }
+
+    .store-item img {
+        padding-top: 10%;
+    }
+
+    .store-item button {
+        background-color: black;
+        border: 1px solid green;
+        border-radius: 10%;
+        width: 30%;
+    }
+
+    .store-item input[type=number] {
+        width: 30%;
+        text-align: center;
+        border: 1px solid black;
+        border-radius: 5px;
+    }
+    
+    input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        -moz-appearance:textfield;
+    }
