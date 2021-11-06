@@ -90,27 +90,39 @@ h4 {
     text-align: center;
 }
 
+.centrescreen {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
 /* Store item classes */
     .store-item {
-        width: 42.5vw;
-        height: 42.5vw;
-        margin: calc(5vw/4);
+        position: relative;
+        width: 275px;
+        height: auto;
+        margin: calc(5vh/4);
         background-color: var(--modPurple); /*  TODO CHANGE THIS */
         border: 1px solid greenyellow;
         border-radius: 10px;
         display: inline-block;
+        margin-right: calc(5vw);
+        margin-left: calc(5vw);
     }
 
-    .store-item:nth-of-type(odd) {
+    /* .store-item:nth-of-type(odd) {
         margin-right: calc(5vw/2);
     }
 
     .store-item:nth-of-type(even) {
         margin-left: calc(5vw/2);
-    }
+    } */
 
     .store-item img {
-        padding-top: 10%;
+        margin: 10%;
+        width: 220px;
+        height: 220px;
     }
 
     .store-item button {
@@ -118,6 +130,14 @@ h4 {
         border: 1px solid green;
         border-radius: 10%;
         width: 30%;
+        font-size: 0.95rem;
+        padding-left: 1vw;
+        padding-right: 1vw;
+        font-family: 'Material Icons';
+        font-size: 1.75rem;
+        margin: 0;
+        display: inline;
+        float:center
     }
 
     .store-item input[type=number] {
@@ -125,6 +145,20 @@ h4 {
         text-align: center;
         border: 1px solid black;
         border-radius: 5px;
+        font-size: 150%;
+        display: inline;
+        float: center;
+        margin-top: 0;
+    }
+
+    .store-item h2 {
+        margin: auto;
+        color: white;
+    }
+
+    .store-item a, .store-item a:visited {
+        text-decoration: none;
+        color:red;
     }
     
     input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {

@@ -15,10 +15,11 @@
 <body>
     <?php include 'assets/php/header.php'?>
     <div class = body>
+        
         <h2><a href = 'login.php'> Log in! </a></h2>
 
-        <h2><a href = 'shop.php'> Shop </a></h2>
-    
+        <h2><a href = 'store.php'> Shop </a></h2>
+
         <h2><a href = 'signup.php'> Sign up! </a></h2>
     
         <h2><a href = 'about.php'> About </a></h2>

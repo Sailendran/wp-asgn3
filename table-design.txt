@@ -1,0 +1,31 @@
+PRODUCTS {
+    name:
+    id:autoincrement
+    image:noImage.png
+    product_visible: 0
+    price: NOTNULL
+}
+
+credentials {
+    userid:autoincrement
+    password:NOTNULL
+}
+
+userdeets {
+    userid: FOREIGN KEY REFERENCE credentials
+    useremail:NOTNULL regex
+    useraddress:NOTNULL (maps?)\
+    userphone:NOTNULL INT(11)
+}
+
+orders {
+    orderid:autoincrement
+    userid: FOREIGN KEY REFERENCE userdeets
+    #parts: int(3)
+}
+
+ordercontent {
+    orderid:FK orders
+    itemid: fk product
+    quantity:int(3)
+}

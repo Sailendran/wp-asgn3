@@ -19,15 +19,7 @@
     <form onkeydown="return event.key != 'Enter';">
     <div class = 'centre'>
         
-        <div class = 'store-item'>
-            <img src = 'assets/product-images/noImage.png'>
-            <?php include 'assets/php/q-selector.php'?>
-        </div>
-           
-        <div class = 'store-item'>
-            <img src = 'assets/product-images/noImage.png'>
-            <?php include 'assets/php/q-selector.php'?>
-        </div>
+        <?php include 'assets/php/q-selector.php'?>
 
     </div>
     </form>
