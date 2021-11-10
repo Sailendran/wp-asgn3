@@ -4,8 +4,9 @@
 }
 
 :root {
-    --background-grey: #0c0a14;
-    --modPurple: #bd1492; /* Use lime? */
+    --background-grey: #201d33;
+    --modPurple: #325278; /* Use lime? */
+    --gry: greenyellow;
     color: white;
 }
 
@@ -21,7 +22,7 @@ button {
 }
 
 h1 {
-    color: greenyellow;
+    color: var(--gry);
     font-family: squidgame;
     text-align: center;
     margin: 0;
@@ -42,7 +43,7 @@ h2:nth-of-type(even) {
 
 h3 {
     font-family: 'squidgame';
-    color: lime;
+    color: var(--gry);
     font-size: 1.75rem;
 }
 
@@ -104,7 +105,7 @@ h4 {
         height: auto;
         margin: calc(5vh/4);
         background-color: var(--modPurple); /*  TODO CHANGE THIS */
-        border: 1px solid greenyellow;
+        border: 1px solid white;
         border-radius: 10px;
         display: inline-block;
         margin-right: calc(5vw);

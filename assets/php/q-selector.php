@@ -2,7 +2,7 @@
 
 require 'dbhandler.php';
 
-$sql = "SELECT product_name, product_image, product_id, product_visible FROM product;";
+$sql = "SELECT product_name, product_image, product_id, product_visible, product_price FROM product;";
 $result = $conn->query($sql);
 $returns = false;
 
@@ -12,7 +12,7 @@ if ($result->num_rows > 0) {
             echo "<div class = 'store-item'> <a href = ../../productpage.php?id=".$row['product_id'].">
                 <img src = 'assets/product-images/".$row['product_image']."'>
                 <h2> ".$row['product_name']." </h2>
-                <h3> Price here </h3>
+                <h3>" . $row['product_price'] . "</h3>
             </a> </div>
             ";
             $returns = true;
