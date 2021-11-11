@@ -53,6 +53,10 @@ h4 {
     font-size: 1.5rem;
 }
 
+p {
+    white-space: nowrap;
+}
+
 /* CLASSES */
 .icons {
     font-family: 'Material Icons';
@@ -89,6 +93,9 @@ h4 {
 .centre {
     float:center;
     text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .centrescreen {
@@ -97,6 +104,7 @@ h4 {
     left: 50%;
     transform: translate(-50%, -50%);
   }
+
 
 /* Store item classes */
     .store-item {
@@ -165,4 +173,36 @@ h4 {
     input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
         -webkit-appearance: none;
         -moz-appearance:textfield;
+    }
+
+/* SIGNUP .PHP */
+
+    fieldset{
+        max-width: 1000px;
+        display: block;
+        margin-left: auto;
+        margin-right:auto;
+    }
+    .signup-form{
+        font-family: 'Mohave';
+        padding-left:10vw;
+        padding-right: 5vw;
+        max-width: fit-content;
+    }
+
+    .signup-form label, .signup-form input {
+        font-weight: bold;
+        font-size: 1.4rem;
+    }
+
+    .signup-form hr {
+        width: 100%;
+        align-self: center;
+    }
+
+    .signup-form input[type=submit] {
+        margin-top: 20vh;
+        margin-bottom: 5vh;
+        background-color:skyblue;
+        color: black;
     }

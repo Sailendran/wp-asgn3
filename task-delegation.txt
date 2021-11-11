@@ -1,0 +1,7 @@
+AA - PHP (designing tables and writing SQL)
+
+Darrel - Javascript
+
+Zaireen - Writing HTML and CSS, designing website appearance
+
+Sai - PHP (Writing PHP and passing info to and from the database and user)

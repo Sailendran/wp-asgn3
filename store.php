@@ -19,7 +19,7 @@
     <form onkeydown="return event.key != 'Enter';">
     <div class = 'centre'>
         
-        <?php include 'assets/php/q-selector.php'?>
+        <?php include 'assets/php/product-display.php'?>
 
     </div>
     </form>

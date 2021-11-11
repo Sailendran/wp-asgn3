@@ -1,9 +1,9 @@
 <?php
 
-$server_name = 'localhost:3307';
+$server_name = 'localhost';
 $username = 'root';
 $password = '';
-$dbname = 'assignment3';
+$dbname = '0342518db';
 
 $conn = new mysqli($server_name, $username, $password, $dbname);
 
