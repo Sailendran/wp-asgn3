@@ -81,7 +81,9 @@ p {
 
 .left {
     float:left;
-    text-align: right;
+    text-align: left;
+    display: block;
+    margin-left: auto;
 }
 
 .right {
@@ -183,11 +185,17 @@ p {
         margin-left: auto;
         margin-right:auto;
     }
+
     .signup-form{
         font-family: 'Mohave';
         padding-left:10vw;
         padding-right: 5vw;
         max-width: fit-content;
+    }
+
+    .signup-form p {
+        font-family: 'Teko';
+        font-size: 1.25rem;
     }
 
     .signup-form label, .signup-form input {
@@ -203,6 +211,12 @@ p {
     .signup-form input[type=submit] {
         margin-top: 20vh;
         margin-bottom: 5vh;
-        background-color:skyblue;
-        color: black;
+        background-color:greenyellow;
+        color: maroon;
+        font-family: 'Mohave';
+    }
+
+    .signup-form input[type=text], .signup-form input[type=email] {
+        text-align: left;
+        font-family: 'Teko';
     }

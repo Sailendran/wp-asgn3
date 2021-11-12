@@ -3,7 +3,7 @@
 $server_name = 'localhost';
 $username = 'root';
 $password = '';
-$dbname = '0342518db';
+$dbname = 'wp_asgn3';
 
 $conn = new mysqli($server_name, $username, $password, $dbname);
 
