@@ -6,9 +6,10 @@
         <script src="assets/js/nav-menu.js">
             const post = <?= isset($_SESSION);?>;
         </script>
+        <script src="assets/js/sidebar.js"></script>
 
         <button class = 'icons' onclick = 'openMenu(<?= isset($_SESSION) ?>)'>menu_open</button>
-        <button class = 'icons' onclick = 'foo()'>account_circle</button>
+        <button class = 'icons' onclick = 'openbttn()'>account_circle</button>
 
         <?php
 
@@ -23,7 +24,20 @@
 
                     <?php
                 };
-            };
+            }else {
+                
+            }
         ?>
+
+        <div class="sidebar" id="side">
+            <ul>
+                <li><a href="#" class="closebttn" onclick="closeside()">X</a></li>
+                <li><a href="#">Login</a></li>
+                <li><a href="#">Cart</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Options</a></li>
+            </ul> 
+        </div>
 
 </div>
