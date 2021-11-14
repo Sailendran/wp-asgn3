@@ -57,6 +57,11 @@ p {
     white-space: nowrap;
 }
 
+form label, form input {
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
 /* CLASSES */
 .icons {
     font-family: 'Material Icons';
@@ -101,10 +106,8 @@ p {
 }
 
 .centrescreen {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    display: grid;
+    place-items: center;
   }
 
 
@@ -196,11 +199,6 @@ p {
     .signup-form p {
         font-family: 'Teko';
         font-size: 1.25rem;
-    }
-
-    .signup-form label, .signup-form input {
-        font-weight: bold;
-        font-size: 1.4rem;
     }
 
     .signup-form hr {
