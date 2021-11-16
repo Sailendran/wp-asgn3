@@ -6,7 +6,7 @@
         <h1 class = 'right'> Greenery </h1>
     </div>
 
-        <script src="assets/js/sidebar.js"></script>
+        <script src="../assets/js/sidebar.js"></script>
 
         <button class = 'icons' onclick = 'openbttn()' id='open-btn'>menu_open</button>
         <button class = 'icons' onclick = ''>account_circle</button>
@@ -17,7 +17,7 @@
                 if ($_SESSION['email'] == 'admin') {
                     ?>
 
-                        <script src="assets/js/goToAdmin.js"></script>
+                        <script src="../assets/js/goToAdmin.js"></script>
                         <button class = 'icons' onclick = 'goToAdmin()'>
                             admin_panel_settings
                         </button>

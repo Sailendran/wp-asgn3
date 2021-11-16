@@ -1,6 +1,6 @@
 <?php
 
-if (isset($_POST['submit'])) {
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     require 'dbhandler.php';
     require 'signup-validation.php';
@@ -17,10 +17,12 @@ if (isset($_POST['submit'])) {
         $stmt = $conn->prepare($sql);
 
         if ($stmt) {
-            $stmt->bind_param('sss', $name, $email, $password);
+            $hashed = password_hash($password, PASSWORD_DEFAULT);
+            $stmt->bind_param('sss', $name, $email, $hashed);
 
             if($stmt->execute()) {
                 
+                header('location: ../../login.php');
                 echo "<h2> Welcome to Greenery @" . $name . '!';
 
             } else echo "Error on insertion: " . $stmt->error;

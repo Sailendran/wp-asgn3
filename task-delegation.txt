@@ -1,7 +1,12 @@
-AA - PHP (designing tables and writing SQL)
+AA - Design MySQL tables and write SQL to create them
 
-Darrel - Javascript
+Darrel - Write Javascript for and design navigation menus, including
+        dynamic display of links to pages depending on if user 
+        is logged in or not.
 
-Zaireen - Writing HTML and CSS, designing website appearance
+        Task delegated on 
 
-Sai - PHP (Writing PHP and passing info to and from the database and user)
+Zaireen - Designing website pages and writing HTML and CSS
+
+Sai - Writing PHP to serve each page dynamically and interact with database
+    Any other work that is overlooked by this document

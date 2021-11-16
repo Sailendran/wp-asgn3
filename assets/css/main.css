@@ -13,6 +13,7 @@
 body {
     background-color: var(--background-grey);
     margin: 0;
+    table-layout: fixed;
 }
 
 button {
@@ -62,6 +63,23 @@ form label, form input {
     font-size: 1.4rem;
 }
 
+table, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+    width: 50%;
+    text-align: center;
+};
+
+td {
+    width: 75%;
+    text-align: center;
+}
+
+th {
+    text-align: center;
+}
+
+
 /* CLASSES */
 .icons {
     font-family: 'Material Icons';
@@ -76,12 +94,14 @@ form label, form input {
     overflow: hidden; 
     background: black; 
     padding: 1vh;
+    transition: margin-left .5s;
 }
 
 .body {
     margin-top : 8px;
     margin-left: 16px;
     margin-right: 16px;
+    transition: margin-left .5s;
 }
 
 .left {
