@@ -1,6 +1,6 @@
 <?php
 
-if ($SERVER['REQUEST_METHOD'] == 'POST') {
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     require 'dbhandler.php';
 
@@ -16,7 +16,6 @@ if ($SERVER['REQUEST_METHOD'] == 'POST') {
         if ($stmt->execute()) {
             $result = $stmt->get_result();
         
-            var_dump($result);
             if ($stmt->affected_rows != 1) { //only expect one account per email
         
                 if($stmt->affected_rows == 0) {
@@ -27,23 +26,19 @@ if ($SERVER['REQUEST_METHOD'] == 'POST') {
 
             } else { //if only one result
 
-                $result = $stmt->get_result();
+                $data = $result->fetch_assoc();
+                $dbpwd = $data['user_password'];
 
-                while ($row = $result->fetch_object()) {
-                    $results[] = $row;
-                }
-                
-                var_dump($results);
-                // if (password_verify($pwd, $dbpswd)) {
-                //     $_SESSION['idno'] = $id;
-                // } else {
-                //     echo "Wrong pass";
-                // }
+                if (password_verify($pwd, $dbpwd)) {
+                    session_start();
+                    $_SESSION['id'] = $data['user_idno'];
+                    header('location: ../../store.php?status=newlogin');
+                };
 
             };
         }  
     } else {
-        echo $stmt;
+        echo 'Failed' . $stmt;
     }
 
 } else {
