@@ -9,7 +9,7 @@ $returns = false;
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc() ) {
         if ($row['product_visible'] == 1) {
-            echo "<div class = 'store-item'> <a href = ../../productpage.php?id=".$row['product_id'].">
+            echo "<div class = 'store-item'> <a href = productpage.php?id=".$row['product_id'].">
                 <img src = 'assets/product-images/".$row['product_image']."'>
                 <h2> ".$row['product_name']." </h2>
                 <h3>" . $row['product_price'] . "</h3>

@@ -13,8 +13,8 @@
 
         <?php
 
-            if (isset($_SESSION['email'])) {
-                if ($_SESSION['email'] == 'admin') {
+            if (isset($_SESSION['id'])) {
+                if ($_SESSION['id'] == 2) {
                     ?>
 
                         <script src="assets/js/goToAdmin.js"></script>
@@ -32,21 +32,31 @@
         <div class="sidebar" id="side">
             <ul>
                 <a class="closebttn" onclick="closeside()">X</a>
-                <li><a href="index.php">Index</a></li>
-                <li><a href="store.php">Store</a></li>
+                
                 <?php
-                    if (!isset($_SESSION['email'])) {
-                        echo '<li><a href="login.php">Login</a></li>';
-                    };
+                    if (!isset($_SESSION['id'])) { ?>
 
-                    if (isset($_SESSION['email'])) { ?>
+                        <li><a href="login.php">Login</a></li>
+                        <li><a href="signup.php">Sign up</a></li>
+
+                    <?php };
+
+                    if (isset($_SESSION['id'])) { ?>
                         <li><a href="#">Cart</a></li>
                         <li><a href="user-pages/options.php">Options</a></li>
             
                     <?php };?>
 
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="about.php">About</a></li>       
+                    <li><a href="index.php">Index</a></li>
+                    <li><a href="store.php">Store</a></li>
+                    <li><a href="about.php">About</a></li>
+
+                    <?php
+                    if (isset($_SESSION['id'])) { ?>
+                        <li><a href="logout.php">Log out</a></li>       
+                    <?php }; ?>
+                        
+
             </ul> 
         </div>
 

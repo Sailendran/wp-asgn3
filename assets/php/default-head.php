@@ -9,5 +9,5 @@
 
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">    
 <link href="https://fonts.googleapis.com/css2?family=Mohave&family=Teko:wght@300&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Lato&family=Mohave&family=Teko:wght@300&display=swap" rel="stylesheet">
 <!-- default-head.php ends -->

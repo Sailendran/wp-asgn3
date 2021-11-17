@@ -56,6 +56,7 @@ h4 {
 
 p {
     white-space: nowrap;
+    font-family: 'Lato', sans-serif;
 }
 
 form label, form input {
@@ -64,19 +65,28 @@ form label, form input {
 }
 
 table, td {
-    border: 2px solid black;
+    border: 1px solid greenyellow;
     border-collapse: collapse;
-    width: 50%;
     text-align: center;
 };
 
+table {
+    width: 95%;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
 td {
-    width: 75%;
     text-align: center;
+    width: 20%;
 }
 
 th {
     text-align: center;
+    border: 3px solid greenyellow;
+    border-left: 1px;
+    border-right: 1px;
 }
 
 
@@ -104,6 +114,16 @@ th {
     transition: margin-left .5s;
 }
 
+.button {
+    background-color: red;
+    border: 2px solid greenyellow;
+    border-radius: 10%;
+    width: 50%;
+    color: black;
+    text-decoration: none;
+    font-size: 2rem;
+}
+
 .left {
     float:left;
     text-align: left;
@@ -129,7 +149,6 @@ th {
     display: grid;
     place-items: center;
   }
-
 
 /* Store item classes */
     .store-item {
@@ -237,4 +256,47 @@ th {
     .signup-form input[type=text], .signup-form input[type=email] {
         text-align: left;
         font-family: 'Teko';
+    }
+
+/* ADMIN PAGES */
+    .true {
+        color: lime;
+        font-size: 1.5rem;
+    }
+
+    .false {
+        color: red;
+        font-size: 1.5rem;
+    }
+
+    table img {
+        padding: 5%;
+    }
+
+    .invisible-borders, .invisible-borders tr, .invisible-borders td {
+        border: 0px solid white;
+        width: 50%;
+        text-align: center;
+    }
+
+    .invisible-borders {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .invisible-borders td {
+        padding: 5%;
+    }
+
+    p.link, a:visited.link p {
+        text-decoration: none;
+        color: red;
+        font-size: 1.2rem;
+    }
+
+    a p, a:link p, a:visited p, a:hover p, a:active p {
+        text-decoration: none;
+        color: greenyellow;
+        
     }

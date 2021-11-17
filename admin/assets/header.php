@@ -12,28 +12,27 @@
         <button class = 'icons' onclick = ''>account_circle</button>
 
         <?php
-
-            if (isset($_SESSION['email'])) {
-                if ($_SESSION['email'] == 'admin') {
+            $sid = $_SESSION['id'];
+            if (isset($_SESSION['id'])) {
+                if ($_SESSION['id'] == 2) {
                     ?>
 
-                        <script src="../assets/js/goToAdmin.js"></script>
-                        <button class = 'icons' onclick = 'goToAdmin()'>
+                        <button class = 'icons' onclick = 'window.location.href = "admin.php"'>
                             admin_panel_settings
                         </button>
 
                     <?php
                 };
             }else {
-                
+                header('location: ../login.php');
             }
         ?>
 
         <div class="sidebar" id="side">
             <ul>
                 <a class="closebttn" onclick="closeside()">X</a>
-                <li><a href="index.php">Index</a></li>
-                <li><a href="store.php">Store</a></li>
+                <li><a href="../index.php">Return to storefront</a></li>
+                <!-- <li><a href="store.php">Store</a></li>
                 <?php
                     if (!isset($_SESSION['id'])) {
                         echo '<li><a href="login.php">Login</a></li>';
@@ -47,7 +46,7 @@
                     <?php };?>
 
                     <li><a href="#">Contact</a></li>
-                    <li><a href="about.php">About</a></li>       
+                    <li><a href="about.php">About</a></li>        -->
             </ul> 
         </div>
 
