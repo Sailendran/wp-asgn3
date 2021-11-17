@@ -298,5 +298,15 @@ th {
     a p, a:link p, a:visited p, a:hover p, a:active p {
         text-decoration: none;
         color: greenyellow;
-        
+    }
+
+/* USER PAGES */
+    #delete-btn {
+        background-color: red;
+        color: gold;
+        border: 5px solid lime;
+        text-align: center;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
     }

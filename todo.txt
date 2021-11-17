@@ -1,0 +1,5 @@
+LOGIN PAGE
+    Error messages (empty field, no account, multiple accounts, wrong password, direct access)
+
+SIGNUP PAGE
+    Error messages (password matching, )

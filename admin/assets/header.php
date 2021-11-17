@@ -32,22 +32,7 @@
             <ul>
                 <a class="closebttn" onclick="closeside()">X</a>
                 <li><a href="../index.php">Return to storefront</a></li>
-                <!-- <li><a href="store.php">Store</a></li>
-                <?php
-                    if (!isset($_SESSION['id'])) {
-                        echo '<li><a href="login.php">Login</a></li>';
-                        echo '<li><a href="signup.php">Sign up</a></li>';
-                    };
-
-                    if (isset($_SESSION['id'])) { ?>
-                        <li><a href="#">Cart</a></li>
-                        <li><a href="user-pages/options.php">Options</a></li>
-            
-                    <?php };?>
-
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="about.php">About</a></li>        -->
-            </ul> 
+                <li><a href="../logout.php">Log out</a></li>
         </div>
 
 </div>

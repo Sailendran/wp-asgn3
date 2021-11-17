@@ -7,17 +7,17 @@
     </div>
 
         <script src="assets/js/sidebar.js"></script>
+        <script src="assets/js/GOTO.js"></script>
 
         <button class = 'icons' onclick = 'openbttn()' id='open-btn'>menu_open</button>
-        <button class = 'icons' onclick = ''>account_circle</button>
+        <button class = 'icons' onclick = 'goToOptions()'>account_circle</button>
 
         <?php
 
             if (isset($_SESSION['id'])) {
                 if ($_SESSION['id'] == 2) {
                     ?>
-
-                        <script src="assets/js/goToAdmin.js"></script>
+                    
                         <button class = 'icons' onclick = 'goToAdmin()'>
                             admin_panel_settings
                         </button>

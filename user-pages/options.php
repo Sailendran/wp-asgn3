@@ -20,17 +20,27 @@
             var_dump($_SESSION);
             require '../assets/php/dbhandler.php';
 
-            $sql = "SELECT * FROM users WHERE user_email =" . $_SESSION['email']. ";";
-            $result = $conn->query($sql);
+            $sql = "SELECT * FROM users WHERE user_email = " . $_SESSION['email']. ";";
+            $query = $conn->query($sql);
+
             $items = ['user_name', 'user_email', 'user_phone', 'address_number', 'address_street', 'address_taman', 'address_city', 'address_state', 'address_postcode', 'address_country'];
             $headings = ['Your name', 'E-mail', 'Phone number', 'House number', 'Street name', 'Taman/District/County, o.e.', 'City', 'State', 'Postcode', 'Country'];
-            $row = $result->fetch_assoc();
+            
+            if ($query) {
+                while ($result = $query->fetch_assoc()) {
 
-            var_dump($row);
-            // foreach ($items as $key => $value) {
-            //     echo "<tr><td>$headings[$key]:</td> <td>". $row[$value] ."</td></tr>";
-            // }
+                    echo $result;
+
+                }
+            }
         ?>
+            
+        </table>
+        <br><br><br>
+
+        <form action = confirm-delete.php>
+            <input type="submit" value="Delete Account" id = 'delete-btn'>
+        </form>
     </div>
 </body>
 </html>
