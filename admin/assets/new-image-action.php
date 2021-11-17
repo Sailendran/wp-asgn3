@@ -7,6 +7,13 @@ $uploadOK = 0;
 
 $fileType = strtolower(pathinfo($file, PATHINFO_EXTENSION));
 
+if ($_FILES['image']['size'] == 0 || $_FILES['image']['error'] != 0)
+{
+    // Blank file or error
+    header('location: ../new-img.php?error=blank');
+    exit();
+}
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // checks for attacks with fake images
@@ -20,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
 
         $uploadOK = 0;
-        header('location: ../new-image.php?error=notimage');
+        header('location: ../new-img.php?error=notimage');
         exit();
 
     };
@@ -30,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (file_exists($file)) {
 
         $uploadOK = 0;
-        header('location: ../new-image.php?error=duplicatefile');
+        header('location: ../new-img.php?error=duplicatefile');
         exit();
 
     }
@@ -39,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($fileType != 'jpg' && $fileType != 'png' && $fileType != 'jpg' && $fileType != 'jpeg') {
 
         $uploadOK = 0;
-        header('location: ../new-image.php?error=filetype');
+        header('location: ../new-img.php?error=filetype');
         exit();
 
     }
