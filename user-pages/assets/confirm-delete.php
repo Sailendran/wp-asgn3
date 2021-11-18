@@ -13,15 +13,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato&family=Mohave&family=Teko:wght@300&display=swap" rel="stylesheet">
     <title>GREENERY - Confirm delete?</title>
 </head>
-<body>
-    <?php include 'header.php' ?>
 
-    <div class="body">
+
+<body>
+
         <form action="delete-user.php" method = "POST">
-            <a href="../options.php"><button class = 'formbtn'>No, keep my account!</button></a>
-            <input type="submit" value="Yes, delete my account" class = 'deletebtn'>
+            <br><br><br><br><br>
+            <input type = 'hidden' value = 'true' name = 'delete'>
+            <input type="submit" value="Yes, delete my account" id = 'deletebtn'>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
         </form>
-    </div>
+
+        <a href="../options.php"><button id = 'deletentbtn' class = 'centrescreen'>No, keep my account!</button></a>
 
 </body>
 </html>

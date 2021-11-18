@@ -84,7 +84,7 @@
                     <td>
                         <p>City/town (o.e.)</p>
                     </td>
-                    <td><input type="text" name="" value="<?=$result['address_city']?>" name = "city"></td>
+                    <td><input type="text" value="<?=$result['address_city']?>" name = "city"></td>
                 </tr>
                 <tr>
                     <td>
@@ -116,7 +116,7 @@
         <br><br><br><p>Scroll further to reach account delete button</p><br><br><br>
 
         <form action = 'assets/confirm-delete.php' method = "POST">
-            <input type="submit" value="Delete Account" id = 'delete-btn'>
+            <input type="submit" value="Delete Account" id = 'deletebtn'>
         </form>
         <br><br><br><br><br>
     </div>

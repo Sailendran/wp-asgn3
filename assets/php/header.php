@@ -42,7 +42,7 @@
                     <?php };
 
                     if (isset($_SESSION['id'])) { ?>
-                        <li><a href="#">Cart</a></li>
+                        <li><a href="cart.php">Cart</a></li>
                         <li><a href="user-pages/options.php">Options</a></li>
             
                     <?php };?>

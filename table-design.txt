@@ -1,8 +1,4 @@
 //// INITIAL DESIGN ////
-
-
-
-//// REVISION 2 ////
 PRODUCTS {
     name:
     id:autoincrement
@@ -34,3 +30,35 @@ ordercontent {
     itemid: fk product
     quantity:int(3)
 }
+
+
+//// REVISION 2 ////
+CREATE TABLE `orders` (
+  `order_id` int(16) DEFAULT NULL PRIMARY KEY,
+  `order_item` int(3) DEFAULT NULL,
+  `user_idno` int(11) NOT NULL FOREIGN KEY (`user_idno`) REFERENCES `users` (`user_idno`),
+  `product_id` int(11) NOT NULL FOREIGN KEY REFERENCES `products` (`product_id`)
+);
+
+CREATE TABLE `products` (
+  `product_id` int(4) NOT NULL PRIMARY KEY,
+  `product_name` varchar(32) NOT NULL,
+  `product_price` float(8,2) NOT NULL,
+  `product_image` varchar(32) NOT NULL DEFAULT 'noImage.png',
+  `product_visible` tinyint(1) NOT NULL DEFAULT 0
+);
+
+CREATE TABLE `users` (
+  `user_idno` int(8) NOT NULL PRIMARY KEY,
+  `user_password` varchar(255) NOT NULL,
+  `user_email` varchar(32) NOT NULL,
+  `user_phone` int(12) DEFAULT NULL,
+  `address_number` int(4) DEFAULT NULL,
+  `address_street` varchar(32) DEFAULT NULL,
+  `address_taman` varchar(32) DEFAULT NULL,
+  `address_city` varchar(32) DEFAULT NULL,
+  `address_state` varchar(32) DEFAULT NULL,
+  `address_postcode` int(6) DEFAULT NULL,
+  `address_country` varchar(32) DEFAULT NULL,
+  `user_name` varchar(16) NOT NULL
+);

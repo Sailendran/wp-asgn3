@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 if (password_verify($pwd, $dbpwd)) {
                     session_start();
                     $_SESSION['id'] = $data['user_idno'];
-                    header('location: ../../store.php?status=newlogin');
+                    header('location: ../../store.php?status=newlogin&name=' . $data['user_name']);
                     exit();
                 } else {
                     header('location: ../../login.php?error=wrongpass');

@@ -31,6 +31,7 @@
                         $name = $data['product_name'];
                         $price = $data['product_price'];
                         $img = $data['product_image'];
+                        $prod_id = $_GET['id'];
 
                     }
                 }
@@ -39,11 +40,19 @@
         
         <img src="assets/product-images/<?=$img?>" class = 'centre' alt="Product image">
         <h1> <?=$name?> </h1>
-        <h3 class = 'centre'> <?=$price?> </h3>
+        <h3 class = 'centre' id = 'price'> <?=$price?> </h3>
 
-        
+        <script src = 'assets/js/product-page.js'></script>
+        <script> adjustPrice(); </script>
 
     </div>
+
+    <form action="assets/php/addtocart.php" method = "POST">
+        <p class = 'centre'>Quantity: </p><input class = 'centre' type="number" name="quantity" step = 1 value = '1' min = '1'>
+        <input type="hidden" name="prod_id" value = "<?=$prod_id?>">
+        <br><br>
+        <input type="submit" value="Add to cart" id = 'cartbtn'>
+    </form>
 
 </body>
 </html>
