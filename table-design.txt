@@ -1,3 +1,8 @@
+//// INITIAL DESIGN ////
+
+
+
+//// REVISION 2 ////
 PRODUCTS {
     name:
     id:autoincrement

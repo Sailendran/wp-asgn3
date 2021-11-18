@@ -9,6 +9,7 @@
 
 <body>
     <?php include 'assets/php/header.php'?>
+    
     <div class = body>
         
         <h2><a href = 'login.php'> Log in! </a></h2>

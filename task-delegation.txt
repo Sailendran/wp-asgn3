@@ -1,10 +1,14 @@
 AA - Design MySQL tables and write SQL to create them
+        (No work returned)
 
 Darrel - Write Javascript for and design navigation menus, including
-        dynamic display of links to pages depending on if user 
-        is logged in or not.
-
+                dynamic display of links to pages depending on if user 
+                is logged in or not.
         Task delegated on 
+
+        Task delegated on 17/11/2021 - DONE
+
+        (login-errors.js, sidebar.js and div class=sidebar, sidebar.css, )
 
 Zaireen - Designing website pages and writing HTML and CSS
 

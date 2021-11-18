@@ -13,7 +13,7 @@
 body {
     background-color: var(--background-grey);
     margin: 0;
-    table-layout: fixed;
+    /* table-layout: fixed; */
 }
 
 button {
@@ -71,7 +71,7 @@ table, td {
 };
 
 table {
-    width: 95%;
+    width: auto;
     display: block;
     margin-right: auto;
     margin-left: auto;
@@ -309,4 +309,11 @@ th {
         display: block;
         margin-left: auto;
         margin-right: auto;
+    }
+
+    .formbtn {
+        margin: 3%;
+        background-color: greenyellow;
+        border: none;
+        color: black;
     }
