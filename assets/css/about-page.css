@@ -4,11 +4,12 @@
 }
 
 /*CLASSES*/
-.white {
-    color: white;
+.heading {
+    color: green;
     text-align: left;
+    text-decoration: underline;
 }
 
 .list {
-    text-align: center;
+    text-align: left;
 }
