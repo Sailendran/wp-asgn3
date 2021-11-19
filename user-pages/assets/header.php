@@ -41,12 +41,11 @@
                     };
 
                     if (isset($_SESSION['id'])) { ?>
-                        <li><a href="#">Cart</a></li>
+                        <li><a href="../cart.php">Cart</a></li>
                         <li><a href="options.php">Options</a></li>
             
                     <?php };?>
 
-                    <li><a href="#">Contact</a></li>
                     <li><a href="../about.php">About</a></li>       
             </ul> 
         </div>

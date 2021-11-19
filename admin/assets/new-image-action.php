@@ -1,5 +1,13 @@
 <?php
 
+if (!isset($_SESSION)) {
+    session_start();
+}
+
+if ($_SESSION['id'] != 2) {
+    header('location: ../../index.php');
+}
+
 $folder = '../../assets/product-images/';
 $file = $folder . basename($_FILES['image']['name']);
 

@@ -32,17 +32,17 @@
                 </div>
 
                 <br><br><br><hr><br><br>
-                
+                <script src = 'assets/js/signup-pswd.js'> </script>
                 <div class = 'right'>
-                    <label for="user_pw">Password: </label><input type="password" name="user_pw" id="pswd1">
+                    <label for="user_pw">Password: </label><input type="password" name="user_pw" id="pswd1" onchange = 'passwordMatch();'>
                     <br><br>
-                    <label for="cf_pw">Confirm password: </label><input type="password" name="pw_cf" id="pswd2">
+                    <label for="cf_pw">Confirm password: </label><input type="password" name="pw_cf" id="pswd2" onchange = 'passwordMatch();'>
                     <p class = 'left' id = 'pw1-text'> Pick a strong password; ideally with more than 8 characters including at least:
                         <br> 
                         1 $¥M₿oł&nbsp; ONE UPPERCASE and 1 numb3r </p>
                 </div>
 
-                <input type="submit" value="Sign up now!" class = 'centre' name = 'submit'>
+                <input type="submit" value="Sign up now!" class = 'centre' name = 'submit' id = 'submit' disabled>
 
             </div>
         </fieldset>

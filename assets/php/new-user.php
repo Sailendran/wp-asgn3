@@ -22,8 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             if($stmt->execute()) {
                 
-                header('location: ../../login.php');
-                echo "<h2> Welcome to Greenery @" . $name . '!';
+                header('location: ../../login.php?status=newuser&name=' . $name);
 
             } else echo "Error on insertion: " . $stmt->error;
 

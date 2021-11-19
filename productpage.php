@@ -6,6 +6,13 @@
     <title>GREENERY - <?=$_GET['id']?></title>
 </head>
 <body>
+
+    <?php
+    var_dump(isset($_SESSION['id']));
+    if (!isset($_SESSION['id'])) {
+        header("location: login.php");
+    } ?>
+
     <?php include 'assets/php/header.php'; ?>
     <br><br><br>
     <div class = 'body'>
@@ -31,6 +38,7 @@
                         $name = $data['product_name'];
                         $price = $data['product_price'];
                         $img = $data['product_image'];
+                        $prod_id = $_GET['id'];
 
                     }
                 }
@@ -39,11 +47,38 @@
         
         <img src="assets/product-images/<?=$img?>" class = 'centre' alt="Product image">
         <h1> <?=$name?> </h1>
-        <h3 class = 'centre'> <?=$price?> </h3>
+        <h3 class = 'centre' id = 'price'> <?=$price?> </h3>
 
-        
+        <script src = 'assets/js/product-page.js'></script>
+        <script> adjustPrice(); </script>
 
     </div>
+
+    <?php
+    $sql = 'SELECT quantity FROM carts WHERE user_idno = ? and product_id = ?;';
+    $stmt2 = $conn->prepare($sql);
+
+    if ($stmt2) {
+        $stmt2->bind_param('ii', $_SESSION['id'], $_GET['id']);
+
+        if ($stmt2->execute()) {
+            $result = $stmt2->get_result();
+            $data = $result->fetch_assoc();
+
+            if ($stmt2->affected_rows > 0) {
+                $q = $data['quantity'];
+            } else $q = 1;
+
+        } else echo $conn->error;
+
+    } else echo $conn->error;?>
+
+    <form action="assets/php/addtocart.php" method = "POST">
+        <p class = 'centre'>Quantity: </p><input class = 'centre' type="number" name="quantity" step = 1 value = '<?=$q?>' min = '1'>
+        <input type="hidden" name="prod_id" value = "<?=$prod_id?>">
+        <br><br>
+        <input type="submit" value="Add to cart" id = 'cartbtn'>
+    </form>
 
 </body>
 </html>

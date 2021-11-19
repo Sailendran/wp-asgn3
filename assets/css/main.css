@@ -164,14 +164,6 @@ th {
         margin-left: calc(5vw);
     }
 
-    /* .store-item:nth-of-type(odd) {
-        margin-right: calc(5vw/2);
-    }
-
-    .store-item:nth-of-type(even) {
-        margin-left: calc(5vw/2);
-    } */
-
     .store-item img {
         margin: 10%;
         width: 220px;
@@ -217,6 +209,15 @@ th {
     input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
         -webkit-appearance: none;
         -moz-appearance:textfield;
+    }
+
+    #cartbtn {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        color: black;
+        background-color: greenyellow;
+        border: 5px solid gold;
     }
 
 /* SIGNUP .PHP */
@@ -301,10 +302,20 @@ th {
     }
 
 /* USER PAGES */
-    #delete-btn {
+    #deletebtn {
         background-color: red;
         color: gold;
         border: 5px solid lime;
+        text-align: center;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #deletentbtn {
+        background-color: greenyellow;
+        color: black;
+        border: 5px solid gold;
         text-align: center;
         display: block;
         margin-left: auto;
@@ -317,3 +328,41 @@ th {
         border: none;
         color: black;
     }
+
+
+/* CART */
+#gt {
+    text-align: right;
+    margin-right: 5%;
+    margin-left: none;
+}
+
+.cart-item {
+    position: relative;
+    width: 275px;
+    height: auto;
+    margin: calc(5vh/4);
+    background-color: var(--modPurple); /*  TODO CHANGE THIS */
+    border: 1px solid white;
+    border-radius: 10px;
+    display: inline-block;
+    margin-right: calc(5vw);
+    margin-left: calc(5vw);
+}
+
+.cart-item img {
+    margin: 10%;
+    width: 220px;
+    height: 220px;
+}
+
+.cart-item h2 {
+    margin: 2%;
+    color: white;
+}
+
+#paybtn {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
