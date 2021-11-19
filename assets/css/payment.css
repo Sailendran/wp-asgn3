@@ -1,0 +1,48 @@
+@font-face {
+    font-family: 'motherland';
+    src: url(../fonts/motherland.ttf);
+}
+
+* {
+    cursor: url('../other-images/hammer-sickle.cur'), auto;
+    color: red;
+}
+
+body {
+    background-color: black;
+    font-family: 'motherland';
+    color: black;
+}
+
+h1 {
+    font-size: 7.5rem;
+    text-align: center;
+}
+
+h4{
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+button {
+    background-color: gold;
+    text-align: center;
+    font-family: 'motherland';
+    font-size: 2.5rem;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    cursor: url('../other-images/gulag.cur'), auto;
+}
+
+p {
+    font-family: 'motherland';
+    color:white;
+    font-size: 1.5rem
+}
+
+a {
+    color: inherit; /* blue colors for links too */
+    text-decoration: inherit; /* no underline */
+}

@@ -47,8 +47,27 @@
 
     </div>
 
+    <?php
+    $sql = 'SELECT quantity FROM carts WHERE user_idno = ? and product_id = ?;';
+    $stmt2 = $conn->prepare($sql);
+
+    if ($stmt2) {
+        $stmt2->bind_param('ii', $_SESSION['id'], $_GET['id']);
+
+        if ($stmt2->execute()) {
+            $result = $stmt2->get_result();
+            $data = $result->fetch_assoc();
+
+            if ($stmt2->affected_rows > 0) {
+                $q = $data['quantity'];
+            } else $q = 1;
+
+        } else echo $conn->error;
+
+    } else echo $conn->error;?>
+
     <form action="assets/php/addtocart.php" method = "POST">
-        <p class = 'centre'>Quantity: </p><input class = 'centre' type="number" name="quantity" step = 1 value = '1' min = '1'>
+        <p class = 'centre'>Quantity: </p><input class = 'centre' type="number" name="quantity" step = 1 value = '<?=$q?>' min = '1'>
         <input type="hidden" name="prod_id" value = "<?=$prod_id?>">
         <br><br>
         <input type="submit" value="Add to cart" id = 'cartbtn'>

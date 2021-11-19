@@ -328,3 +328,41 @@ th {
         border: none;
         color: black;
     }
+
+
+/* CART */
+#gt {
+    text-align: right;
+    margin-right: 5%;
+    margin-left: none;
+}
+
+.cart-item {
+    position: relative;
+    width: 275px;
+    height: auto;
+    margin: calc(5vh/4);
+    background-color: var(--modPurple); /*  TODO CHANGE THIS */
+    border: 1px solid white;
+    border-radius: 10px;
+    display: inline-block;
+    margin-right: calc(5vw);
+    margin-left: calc(5vw);
+}
+
+.cart-item img {
+    margin: 10%;
+    width: 220px;
+    height: 220px;
+}
+
+.cart-item h2 {
+    margin: 2%;
+    color: white;
+}
+
+#paybtn {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

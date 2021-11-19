@@ -7,12 +7,14 @@
 <body>
     <?php include 'assets/php/header.php'?>
 
-    <div class="body">
+    <div class="centre body">
 
     <?php
     require 'assets/php/dbhandler.php';
 
-    $sql = "SELECT * FROM carts WHERE user_idno = ?";
+    $sql = "SELECT carts.*, products.* FROM carts AS carts
+        LEFT JOIN products products ON carts.product_id = products.product_id && products.product_visible = 1
+        WHERE carts.user_idno = ?;";
     $stmt = $conn->prepare($sql);
 
     $stmt->bind_param('i', $_SESSION['id']);
@@ -21,61 +23,43 @@
     if ($stmt) {
         if($stmt->execute()) {
             
-            $result = $stmt->get_result(); //cannot get result because of buffer, must store. Loop through
-            var_dump($result);
+            $result = $stmt->get_result();
+            $grandTotal = 0;
 
-            if ($stmt->affected_rows == 0) {
+            while ($data = $result->fetch_assoc()) {?>
 
-                echo "<h1 class = 'centre'>No items in your cart yet...</h1>";
-
-            } else {
-
-                while ($data = $result->fetch_assoc()) {
-
-                    $product_info[$data['product_id']] = $data;
-
-                }
-
-                // var_dump($product_info);
-                //     $sql = "SELECT product_name, product_price, product_image FROM products where product_id = ?;";
-                //     $stmt = $conn->prepare($sql);
-
-                //     $stmt->bind_param('i', $data['product_id']);
-                //     $result = $stmt->get_result();
-
-                //     echo $stmt->error;
-                //     $product_info = $result->fetch_assoc();
-                    
-                    
-                    foreach ($product_info as $id => $values) {}
-
-                        $sql = "SELECT product_name, product_price, product_image FROM products where product_id = ?;";
-                        $stmt = $conn->prepare($sql);
-
-                        $stmt->bind_param('i', $id);
-                        $result = $stmt->get_result();
-
-                        echo $stmt->error;
-                        $product_info = $result->fetch_assoc(); ?>
-
-                        <div class = 'store-item'>
-                            <img src = 'assets/product-images/<?=$result['product_image']?>'>
-                            <h2> <?=$values['quantity']?> x <?=$product_info['product_name']?> </h2>
-                            <h3> $<?=$product_info['product_price']?></h3>
-                            <p> For a total of <?php echo ((float)$product_info['product_price'] * (int)$values['quantity']);
-                        
-                ?>
-
-                </div>
-
-            <?php
-            }
+            <div class = 'cart-item'>
+                <img src = 'assets/product-images/<?=$data["product_image"]?>'>
+                <h2> <?=$data['product_name']?> </h2>
+                <p> <?=$data['quantity']?> units</p>
+                <h3 class = 'centre'> <a class='price'><?=(float)$data['product_price']?></a></h3>
+                <p class = 'centre'> For a total of <a class='price'><?= (int)$data['quantity'] * (float)$data['product_price']?></a>
+                <?php $grandTotal += (int)$data['quantity'] * (float)$data['product_price'] ?>
+            </div>
+               
+            <?php ;
+            };
         }
     }
-    
-?>
-
+?>    
+            </div>
     </div>
+<script src="assets/js/cart.js"></script>
+<script>
+    fixPrices();
+</script>
 
+<?php 
+if ($grandTotal != 0) { ?>
+    <br><br><br><br><br>
+    <h1>Grand total: $<a id = 'gt'><?=number_format($grandTotal, 2)?></a></h1>
+
+    <form action = 'assets/php/payment.php' method = "POST">
+        <input type="hidden" name="total" value = '<?=number_format($grandTotal, 2)?>'>
+        <input type="submit" value="Proceed to payment" class = 'formbtn' id = 'paybtn'>
+    </form>
+<?php } else {
+    echo "<h1> Add items to your cart first, then return to pay </h1>";
+} ?>
 </body>
 </html>
