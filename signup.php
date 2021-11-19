@@ -20,7 +20,7 @@
                 <div>
                     <input class = 'right' type="text" name="user_name" id="name"><label for="user_pw" class = 'right'>Your name:&nbsp;</label>
                     <br><br>
-                    <p class = 'left' id = 'pw1-text'> Pick a nickname that your friends might call you. Only you can see this name. </p>
+                    <p class = 'left' id = 'name-text'> Pick a nickname that your friends might call you. Only you can see this name. </p>
                 </div>
                 
                 <br><br><br><hr><br><br>
@@ -28,7 +28,7 @@
                 <div>
                     <label for="email">E-mail:  </label><input type="email" name="user_email" id="email">
                     <br>
-                    <p class = 'right' id = 'email-text'>Your e-mail must be active; reciepts and password recovery codes will be sent to this e-mail address</p>
+                    <p class = 'left' id = 'email-text'>Your e-mail must be active; reciepts and password recovery codes will be sent to this e-mail address</p>
                 </div>
 
                 <br><br><br><hr><br><br>
@@ -50,5 +50,36 @@
 
     </div>
     <br><br><br>
+
+    <?php
+    if(isset($_GET)){
+
+
+            if(isset($_GET['error'])){;
+
+                echo '<script src="assets/js/signup-errors.js"></script>';
+                
+                if($_GET['error'] === 'emptyemail'){
+                    echo '<script>emptyemail();</script>';
+                } else if ($_GET['error'] == 'emptyname') {
+                    echo '<script>emptyname();</script>';
+                } else if ($_GET['error'] == 'emptypswd') {
+                    echo '<script>emptypswd();</script>';
+                } else if ($_GET['error'] == 'invalidemail') {
+                    echo '<script>invalidemail();</script>';
+                } else if ($_GET['error'] == 'emailtaken') {
+                    echo '<script>emailtaken();</script>';
+                } else if ($_GET['error'] == 'sqlfail') {
+                    echo '<script>sqlfail();</script>';
+                } else if ($_GET['error'] == 'dbdown') {
+                    echo '<script>dbdown();</script>';
+                }   else {
+                    echo '<script>unknown();</script>'; // alert that an unknown error occoured
+                }
+            }
+        }
+        
+    ?> 
+
 </body>
 </html>

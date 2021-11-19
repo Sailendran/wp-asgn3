@@ -1,0 +1,14 @@
+@font-face {
+    font-family: vogue;
+    src: url(../fonts/Vogue.ttf);
+}
+
+/*CLASSES*/
+.white {
+    color: white;
+    text-align: left;
+}
+
+.list {
+    text-align: center;
+}
