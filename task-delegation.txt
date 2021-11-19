@@ -1,4 +1,9 @@
-AA - Design MySQL tables and write SQL to create them
+Format:
+NAME - TASKS ASSIGNED AT START OF WORK (as general guideline)
+
+        FILES WRITTEN
+
+Abdul Rahman - Design MySQL tables and write SQL to create and use them
         
         table-design.txt (Initial design)
 
@@ -6,17 +11,15 @@ Darrel - Write Javascript for and design navigation menus, including
                 dynamic display of links to pages depending on if user 
                 is logged in or not.
 
-        login-errors.js, sidebar.js and div class=sidebar, sidebar.css
+        login-errors.js, sidebar.js, div class=sidebar in header.php and sidebar.css
 
 Zaireen - Designing website pages and writing HTML and CSS
         
-        about.php, main.css (with some exceptions), 
+        about.php, main.css (with some exceptions), about-page.css, general website 
+        stylings and appearance
 
-Sai - Writing PHP to serve each page dynamically and interact with database
+Sailendran - Writing PHP to serve each page dynamically and interact with database
     
-    Any other work that is overlooked by this document
-
-Format:
-NAME - TASK STATED AT START OF work
-
-        FILES WRITTEN
+        All php files (except about.php), main.css (with exceptions), payment.css, 
+        product-page.js, signup-pswd.js, options-errors.js, GOTO.js, 
+        deleteAccountConfirmation.js and cart.js

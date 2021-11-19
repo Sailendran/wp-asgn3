@@ -62,3 +62,5 @@ CREATE TABLE `users` (
   `address_country` varchar(32) DEFAULT NULL,
   `user_name` varchar(16) NOT NULL
 );
+
+// REVISION 3 in SQL SCHEMA //
