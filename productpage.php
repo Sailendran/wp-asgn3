@@ -7,16 +7,14 @@
 </head>
 <body>
 
-    <?php
-    var_dump(isset($_SESSION['id']));
-    if (!isset($_SESSION['id'])) {
-        header("location: login.php");
-    } ?>
-
+    
     <?php include 'assets/php/header.php'; ?>
     <br><br><br>
     <div class = 'body'>
-    
+    <?php if (!isset($_SESSION['id'])) {
+        header("location: login.php");
+    } ?>
+
         <?php
             $sql = 'SELECT * FROM products WHERE product_id = ?;';
             $stmt = $conn->prepare($sql);

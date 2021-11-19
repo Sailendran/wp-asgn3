@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 18, 2021 at 03:19 PM
+-- Generation Time: Nov 19, 2021 at 11:08 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -24,15 +24,26 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `orders`
+-- Table structure for table `carts`
 --
 
-CREATE TABLE `orders` (
-  `order_id` int(16) DEFAULT NULL,
-  `order_item` int(3) DEFAULT NULL,
-  `user_idno` int(11) NOT NULL,
-  `product_id` int(11) NOT NULL
+CREATE TABLE `carts` (
+  `user_idno` int(8) NOT NULL,
+  `product_id` int(4) NOT NULL,
+  `quantity` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `carts`
+--
+
+INSERT INTO `carts` (`user_idno`, `product_id`, `quantity`) VALUES
+(1, 2, 7),
+(1, 5, 30),
+(2, 6, 5),
+(5, 3, 2),
+(6, 1, 5),
+(6, 3, 7);
 
 -- --------------------------------------------------------
 
@@ -54,8 +65,11 @@ CREATE TABLE `products` (
 
 INSERT INTO `products` (`product_id`, `product_name`, `product_price`, `product_image`, `product_visible`) VALUES
 (1, 'Weed', 4.20, 'noImage.png', 1),
-(2, 'Crack', 69.99, 'noImage.png', 0),
-(3, 'Heroine', 21.00, 'noImage.png', 1);
+(2, 'Crack', 69.99, 'noImage.png', 1),
+(3, 'Heroine', 21.00, 'noImage.png', 1),
+(4, 'Meth', 69.69, 'noImage.png', 1),
+(5, 'Ketum', 57.63, 'noImage.png', 1),
+(6, 'MDMA', 64.32, 'noImage.png', 1);
 
 -- --------------------------------------------------------
 
@@ -66,6 +80,7 @@ INSERT INTO `products` (`product_id`, `product_name`, `product_price`, `product_
 CREATE TABLE `users` (
   `user_idno` int(8) NOT NULL,
   `user_password` varchar(255) NOT NULL,
+  `user_name` varchar(16) NOT NULL,
   `user_email` varchar(32) NOT NULL,
   `user_phone` int(12) DEFAULT NULL,
   `address_number` int(4) DEFAULT NULL,
@@ -74,8 +89,7 @@ CREATE TABLE `users` (
   `address_city` varchar(32) DEFAULT NULL,
   `address_state` varchar(32) DEFAULT NULL,
   `address_postcode` int(6) DEFAULT NULL,
-  `address_country` varchar(32) DEFAULT NULL,
-  `user_name` varchar(16) NOT NULL
+  `address_country` varchar(32) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -83,19 +97,22 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_idno`, `user_password`, `user_email`, `user_phone`, `address_number`, `address_street`, `address_taman`, `address_city`, `address_state`, `address_postcode`, `address_country`, `user_name`) VALUES
-(1, '$2y$10$913IizhoZbJWw7Dmv65toOTb./FMgrPsSKZ1ObfHJaew80.htBD82', 'test@user.com', NULL, 0, '', NULL, NULL, NULL, NULL, NULL, 'Test User'),
-(2, '$2y$10$9/9YqxiavdgXu4yYCiWr2eFbO9d8tMb630dtoRM.dmJnFoJIquAGm', 'admin@test.com', NULL, 0, '', NULL, NULL, NULL, NULL, NULL, 'Admin'),
-(3, '$2y$10$HcNQYI/I2duIAkCMtADHeOPjbw92CaSs/4XeNp9.7HbzRIbJi6fZK', 'test@delete.com', 1234567889, 156, 'Jalan Maharaja Lela', 'Taman Penjajah', NULL, 'Ngeri', 45600, 'Afghanistaan', 'Deletion');
+(1, '$2y$10$913IizhoZbJWw7Dmv65toOTb./FMgrPsSKZ1ObfHJaew80.htBD82', 'test@user.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Test User'),
+(2, '$2y$10$9/9YqxiavdgXu4yYCiWr2eFbO9d8tMb630dtoRM.dmJnFoJIquAGm', 'admin@test.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Admin'),
+(4, '$2y$10$TCVobJe3Iv/robX/0EIo7.vCiv/1XbRAV2FqnT4RCcGpszMDI6WSi', 'test@user2.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Test2'),
+(5, '$2y$10$pLTZUYg/28Rcq/bVssoJ6useIYu3.yUqb9cJpq.OwlJCTmtxSDrSG', 'test@user3.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Test3'),
+(6, '$2y$10$ap3lRpU4Tv0mLxQt6ARA2uERINmLEAAze1SqKfT1B31OJV1KpzHsi', 'nicole@test.com', 0, 0, '', '', '', '', 0, '', 'Nicole'),
+(7, '$2y$10$EpyUoKk3bXwnPNEdk4QN4uSFcFYpXbEVKiS/PzMRom7eVY.W6F9Gu', 'test@user5.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Testn\'t');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `orders`
+-- Indexes for table `carts`
 --
-ALTER TABLE `orders`
-  ADD KEY `user_idno` (`user_idno`),
+ALTER TABLE `carts`
+  ADD PRIMARY KEY (`user_idno`,`product_id`),
   ADD KEY `product_id` (`product_id`);
 
 --
@@ -118,24 +135,24 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `product_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_idno` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `user_idno` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Constraints for dumped tables
 --
 
 --
--- Constraints for table `orders`
+-- Constraints for table `carts`
 --
-ALTER TABLE `orders`
-  ADD CONSTRAINT `product_id` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `user_idno` FOREIGN KEY (`user_idno`) REFERENCES `users` (`user_idno`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE `carts`
+  ADD CONSTRAINT `carts_ibfk_1` FOREIGN KEY (`user_idno`) REFERENCES `users` (`user_idno`),
+  ADD CONSTRAINT `carts_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
