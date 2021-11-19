@@ -21,7 +21,8 @@
     if ($stmt) {
         if($stmt->execute()) {
             
-            $result = $stmt->store_result(); //cannot get result because of buffer, must store. Loop through
+            $result = $stmt->get_result(); //cannot get result because of buffer, must store. Loop through
+            var_dump($result);
 
             if ($stmt->affected_rows == 0) {
 
@@ -30,24 +31,40 @@
             } else {
 
                 while ($data = $result->fetch_assoc()) {
-                    $sql = "SELECT product_name, product_price, product_image FROM products where product_id = ?;";
-                    $stmt = $conn->prepare($sql);
 
-                    $stmt->bind_param('i', $data['product_id']);
-                    $result = $stmt->get_result();
+                    $product_info[$data['product_id']] = $data;
 
-                    echo $stmt->error;
-                    $product_info = $result->fetch_assoc();
+                }
+
+                // var_dump($product_info);
+                //     $sql = "SELECT product_name, product_price, product_image FROM products where product_id = ?;";
+                //     $stmt = $conn->prepare($sql);
+
+                //     $stmt->bind_param('i', $data['product_id']);
+                //     $result = $stmt->get_result();
+
+                //     echo $stmt->error;
+                //     $product_info = $result->fetch_assoc();
                     
-                    ?>
                     
-                    <div class = 'store-item'>
-                        <img src = 'assets/product-images/<?=$product_info['product_image']?>'>
-                        <h2> <?=$data['quantity']?> x <?=$product_info['product_name']?> </h2>
-                        <h3> $<?=$product_info['product_price']?></h3>
-                        <p> For a total of <?php echo ((float)$product_info['product_price'] * (int)$data['quantity']);
+                    foreach ($product_info as $id => $values) {}
+
+                        $sql = "SELECT product_name, product_price, product_image FROM products where product_id = ?;";
+                        $stmt = $conn->prepare($sql);
+
+                        $stmt->bind_param('i', $id);
+                        $result = $stmt->get_result();
+
+                        echo $stmt->error;
+                        $product_info = $result->fetch_assoc(); ?>
+
+                        <div class = 'store-item'>
+                            <img src = 'assets/product-images/<?=$result['product_image']?>'>
+                            <h2> <?=$values['quantity']?> x <?=$product_info['product_name']?> </h2>
+                            <h3> $<?=$product_info['product_price']?></h3>
+                            <p> For a total of <?php echo ((float)$product_info['product_price'] * (int)$values['quantity']);
                         
-                }?>
+                ?>
 
                 </div>
 
