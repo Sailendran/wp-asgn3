@@ -6,6 +6,13 @@
     <title>GREENERY - <?=$_GET['id']?></title>
 </head>
 <body>
+
+    <?php
+    var_dump(isset($_SESSION['id']));
+    if (!isset($_SESSION['id'])) {
+        header("location: login.php");
+    } ?>
+
     <?php include 'assets/php/header.php'; ?>
     <br><br><br>
     <div class = 'body'>

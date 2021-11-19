@@ -1,5 +1,5 @@
 function goToAdmin() {
-    location.href = 'admin/manage-products.php';
+    location.href = 'admin/admin.php';
 };
 
 function goToOptions() {

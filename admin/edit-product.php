@@ -53,7 +53,7 @@
                             <tr>
                                 <td>Product image: </td>
                                 <td><input type="text" name="image" id="image" value = "<?=$data['product_image']?>">
-                                <a href = 'new-image.php'><p class = 'link'> or add a new image</p></a></td>
+                                <a href = 'new-img.php'><p class = 'link'> or add a new image</p></a></td>
                             </tr>
 
                             <tr>

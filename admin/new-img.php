@@ -5,6 +5,15 @@
     <title>GREENERY - New product image</title>
 </head>
 <body>
+
+    <?php if (!isset($_SESSION)) {
+        session_start();
+    }
+
+    if ($_SESSION['id'] != 2) {
+        header('location: ../../index.php');
+    }?>
+
     
     <?php include 'assets/header.php'?>
 

@@ -18,6 +18,8 @@
             <a href = '../assets/product-images/'><p>View the images in the product images folder (be careful not to delete the files in use)</p></a>
             <br><br><br>
             <a href = 'new-img.php'><p>Add a new image to the product images folder</p></a>
+            <br><br><br>
+            <a href = 'new-product.php'><p>Add a product to the site</p></a>
         </div>
 
     </div>
