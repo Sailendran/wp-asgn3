@@ -46,13 +46,13 @@
                 
                 <tr>
                     <td>
-                        <p>Name:</p>
+                        <p id = 'name'>Name:</p>
                     </td>
                     <td><input type="text" value = <?=$result['user_name']?> name = "name"></td>
                 </tr>
                 <tr>
                     <td>
-                        <p>E-mail:</p>
+                        <p id = 'email'>E-mail:</p>
                     </td>
                     <td><input type="email" value="<?=$result['user_email']?>" name = "email"></td>
                 </tr>
@@ -119,6 +119,22 @@
             <input type="submit" value="Delete Account" id = 'deletebtn'>
         </form>
         <br><br><br><br><br>
+
+        <?php
+            if (isset($_GET)) {
+                echo "<script src = '../assets/js/options-errors.js'></script>";
+                if (isset($_GET['error'])) {
+
+                    if ($_GET['error'] == 'emptyname') {
+                        echo "<script>emptyname();</script>";
+                    } else if ($_GET['error'] == 'emptyemail') {
+                        echo "<script>emptyemail();</script>";
+                    };
+
+                };
+            }
+        ?>
+
     </div>
 </body>
 </html>
