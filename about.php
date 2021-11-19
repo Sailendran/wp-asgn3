@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
 
-    <link rel="stylesheet" href="assets/css/about-page.css">
+    
     <?php include 'assets/php/default-head.php'?>
+    <link rel="stylesheet" href="assets/css/about-page.css">
     <title>GREENERY - About</title>
     
 
@@ -33,7 +34,7 @@
             <h4 class = 'heading'>
                 WEBSITE FEATURES
             </h4>
-            <p class = 'heading'> What makes our website so special? Here's a list of the features we have: <br>
+            <p class = 'heading-s'> What makes our website so special? Here's a list of the features we have: <br>
             </p>
             <ol>
                 <li class='list'> Login and Signup page </li>
@@ -43,14 +44,17 @@
                 <li class='list'> A cart system </li>
                 <li class='list'> Authorized access for users and admin </li>
             </ol>
-            <p> As you can see, we have a fully functional login and signup page where you can create an account and also sign in to access your cart! <br>
-            The cart system is protected, therefore no one can see what you're planning to buy *wink*... SO don't worry, your secret is safe with us, you weirdo. <br>
-            Dynamic pages are also created for you to view the different products that we offer! It's kinda cool.
+            <p> 
+                
+            &emsp;&emsp; As you can see, we have a fully functional login and signup page where you can create an account and also sign in to access your cart! <br>
+            The cart system is protected, therefore no one can see what you're planning to buy *wink*... SO don't worry, your secret is safe with us, you weirdo. 
+            <br><br><br>
+            &emsp;&emsp; Dynamic pages are also created for you to view the different products that we offer! It's kinda cool. It means that the website is infinitely scalable! 
+            The root <br>user can add new items at any time and even drop new images into the product-images folder so that each item can have a unique image. If it doesn't,
+            the website provides <br>a fallback! =D
         
         
-        </p>
-
-        
+            </p>
 
         </div>
 

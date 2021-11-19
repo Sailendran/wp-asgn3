@@ -3,11 +3,19 @@
     src: url(../fonts/Vogue.ttf);
 }
 
+p {
+    width: 95%;
+}
+
 /*CLASSES*/
 .heading {
     color: green;
     text-align: left;
     text-decoration: underline;
+}
+
+.heading-s {
+    color: greenyellow;
 }
 
 .list {
